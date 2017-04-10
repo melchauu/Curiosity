@@ -7,22 +7,65 @@
 
 .banner{
   height: 8vh;
-  margin-top:5px;
+  margin-top:15px;
+  margin-bottom:15px;
+}
+.underLine{
+  height: 2vh;
+  margin-top:7px;
   margin-bottom:15px;
 }
 .bannerText{
   color: rgb(243,181,98);
-  font: 900 30px Bungee Hairline;
+  /*font: 900 30px Bungee Hairline*/
+  font: bold 45px Rajdhani;
 }
-.yellowRect{
+.yellow{
   background-color:rgb(243,181,98);
   height:inherit;
+}
+.burgundy{
+  background-color:rgb(140,90,80);
+  height:inherit;
+}
+.teal{
+  background-color:rgb(66,132,115);
+  height:inherit;
+}
+.grassFaded{
+  background-color:rgb(156,156,107);
+  height:inherit;
+}
+.aqua{
+  background-color:rgb(99,165,148);
+  height:inherit;
+}
+.bordered-box {
+  border: 30px solid grey;
+  height: 300px;
+  border-image: url("img/spaceBorders.png") 30 40 30 40;
+}
+.bordered-box.tall {
+  height: 500px;
 }
 .round{
   border-top-left-radius:30px;
   border-bottom-left-radius:30px;
 }
-
+img.small {
+  display: block;
+  max-width:200px;
+  max-height:200px;
+  width: auto;
+  height: auto;
+}
+img.large {
+  display: block;
+  max-width:480px;
+  max-height:480px;
+  width: auto;
+  height: auto;
+}
 .textBox{
   display: flex;
   align-items: center;
