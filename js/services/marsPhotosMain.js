@@ -1,13 +1,16 @@
 
 app.factory('marsPhotosMain', ['$http', function($http) {
-  return $http.get('http://www.omdbapi.com/?t=sherlock&tomatoes=true&plot=full')
-            .success(function(data) {
-				console.log(data);
-              return data;
-            })
-            .error(function(err) {
-              return err;
-            });
+  return {
+  			get : function() {
+  				return $http.get('/api/todos');
+  			},
+  			create : function(todoData) {
+  				return $http.post('/api/todos', todoData);
+  			},
+  			delete : function(id) {
+  				return $http.delete('/api/todos/' + id);
+  			}
+  		}
 }]);
 /*
 THIS WORKS, because this has the cross origin stuff
