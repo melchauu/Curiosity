@@ -22,7 +22,8 @@ module.exports = function (app) {
 			bodyChunks.push(chunk);
 		  }).on('end', function() {
 			var body = Buffer.concat(bodyChunks);
-			console.log('BODY: ' + body);
+			var jsonBody = JSON.parse(body);
+			console.log('BODY: ' + JSON.stringify(jsonBody.photos[0]));
 			// ...and/or process the entire body here.
 		  })
 		});
