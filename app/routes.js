@@ -10,10 +10,11 @@ module.exports = function (app) {
 		  host: 'www.google.com',
 		  path: '/index.html'
 		};*/
-
+		var returnData;
 		var req = https.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=mast&api_key=DEMO_KEY', function(res) {
-		  console.log('STATUS: ' + res.statusCode);
-		  console.log('HEADERS: ' + JSON.stringify(res.headers));
+		  console.log("get all todos was called");
+		  //console.log('STATUS: ' + res.statusCode);
+		  //console.log('HEADERS: ' + JSON.stringify(res.headers));
 
 		  // Buffer the body entirely for processing as a whole.
 		  var bodyChunks = [];
@@ -23,14 +24,14 @@ module.exports = function (app) {
 		  }).on('end', function() {
 			var body = Buffer.concat(bodyChunks);
 			var jsonBody = JSON.parse(body);
-			console.log('BODY: ' + JSON.stringify(jsonBody.photos[0]));
+			console.log('BODY: ' + JSON.stringify(jsonBody.photos[0].img_src));
+			return jsonBody.photos[0].img_src;
 			// ...and/or process the entire body here.
 		  })
 		});
 		req.on('error', function(e) {
 		  console.log('ERROR: ' + e.message);
 		});
-		console.log("get all todos was called");
     });
 
     // create todo and send back all todos after creation
