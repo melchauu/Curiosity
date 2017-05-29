@@ -19,7 +19,7 @@
     app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
     app.use(methodOverride());
 	// routes ======================================================================
-	require('./app/routes.js')(app);
+	require('./public/routes.js')(app);
 	
     // listen (start app with node server.js) ======================================
     app.listen(8090);
