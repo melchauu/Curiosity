@@ -11,21 +11,25 @@ module.exports = function (app) {
 		  path: '/index.html'
 		};*/
 		var returnData;
-		var req = https.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=mast&api_key=DEMO_KEY', function(res) {
+		var req = https.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=mast&api_key=DEMO_KEY', function(reshttp) {
 		  console.log("get all todos was called");
-		  //console.log('STATUS: ' + res.statusCode);
-		  //console.log('HEADERS: ' + JSON.stringify(res.headers));
+		  //console.log('STATUS: ' + reshttp.statusCode);
+		  //console.log('HEADERS: ' + JSON.stringify(reshttp.headers));
 
 		  // Buffer the body entirely for processing as a whole.
 		  var bodyChunks = [];
-		  res.on('data', function(chunk) {
+		  reshttp.on('data', function(chunk) {
 			// You can process streamed parts here...
 			bodyChunks.push(chunk);
 		  }).on('end', function() {
 			var body = Buffer.concat(bodyChunks);
 			var jsonBody = JSON.parse(body);
 			console.log('BODY: ' + JSON.stringify(jsonBody.photos[0].img_src));
-			return jsonBody.photos[0].img_src;
+			//reshttp.json(jsonBody.photos[0].img_src);
+			// ** the args in .get and .post are special. 
+			//req is the request, res is the result
+			//must call res.send or res.json to actually trigger the callback, and finish this get request. 
+			res.send(jsonBody.photos[0].img_src);
 			// ...and/or process the entire body here.
 		  })
 		});
