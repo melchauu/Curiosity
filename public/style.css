@@ -17,8 +17,38 @@
 }
 .bannerText{
   color: rgb(243,181,98);
-  /*font: 900 30px Bungee Hairline*/
   font: bold 45px Rajdhani;
+}
+.dateDiv{
+  text-align: center; /* centers the contents of the div */
+}
+.dateText{
+  color: rgb(66,132,115);
+  font: bold 45px Rajdhani;
+  text-align:center;
+  background: transparent;
+  border: none;
+}
+input[type="text"]
+{
+    background: transparent;
+    border: none;
+}
+.arrow{
+  vertical-align: baseline;
+  outline: none;
+  -webkit-filter: brightness(100%);
+  -moz-filter: brightness(100%);
+  -o-filter: brightness(100%);
+  -ms-filter: brightness(100%);
+  filter: brightness(100%);
+}
+.arrow:hover {
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+  -o-filter: brightness(70%);
+  -ms-filter: brightness(70%);
+  filter: brightness(70%);
 }
 .yellow{
   background-color:rgb(243,181,98);
