@@ -29,6 +29,20 @@
   background: transparent;
   border: none;
 }
+.timeText{
+  /* color: rgb(99,165,148);*/
+  color: rgb(156,156,107);
+  font: bold 30px Rajdhani;
+  text-align:center;
+  background: transparent;
+  border: none;
+  vertical-align: middle;
+}
+.upDownArrowDiv{
+  display: inline-block;
+  max-width: 24px;
+  vertical-align: middle;
+}
 input[type="text"]
 {
     background: transparent;
