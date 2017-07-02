@@ -2,7 +2,13 @@ var angApp = angular.module('curiosity', []);
 angApp.controller('MainController', ['$scope', 'marsPhotosMain','$http', function($scope, marsPhotosMain,$http) {
 		$scope.formData = {};
 		$scope.loading = true;
-		
+
+		$scope.sol = 0;
+		$scope.solDecr = function(){
+			if ($scope.sol > 0){
+				$scope.sol--;
+			}
+		};
 		marsPhotosMain.get()
 		.success(function(data) {
 			$scope.mastCam = data;
@@ -13,7 +19,7 @@ angApp.controller('MainController', ['$scope', 'marsPhotosMain','$http', functio
 			});
 
 	}]);
-	
+
 angApp.factory('marsPhotosMain', ['$http', function($http) {
   return {
   			get : function() {
