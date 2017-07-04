@@ -41,6 +41,11 @@ angApp.controller('MainController', ['$scope', 'marsPhotosMain','$http', functio
 				$scope.solDisplay=$scope.solDispUpdate();
 				$scope.hrs = 0;
 			}
+			else if ($scope.hrs < 0 && $scope.sol != 0) {
+				$scope.sol--;
+				$scope.solDisplay=$scope.solDispUpdate();
+				$scope.hrs = 23;
+			}
 			$scope.hrsDisplay=$scope.hrsDispUpdate($scope.hrs);
 		}
 		$scope.$watch('sol', function(newVal, oldVal){
