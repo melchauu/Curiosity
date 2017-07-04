@@ -56,10 +56,10 @@
         </div>
 		<div class="dateDiv">
 		  <!--<label class="dateText">Sol 100</label>-->
-		  <input class="timeText" type="text" value="01:00">
+		  <input class="timeText" type="text" value="{{hrsDisplay}}">
 		  <div class="upDownArrowDiv">
-			  <input class="arrow" type="image" src="img/up-arrow-24-grass.png" alt="Submit" width="24" height="24">
-			  <input class="arrow" type="image" src="img/down-arrow-24-grass.png" alt="Submit" width="24" height="24">
+			  <input class="arrow" type="image" src="img/up-arrow-24-grass.png" alt="Submit" width="24" height="24" ng-click="hrsUpdate(1)">
+			  <input class="arrow" type="image" src="img/down-arrow-24-grass.png" alt="Submit" width="24" height="24" ng-click="hrsUpdate(-1)">
 		  </div>
         </div>
       </div>
