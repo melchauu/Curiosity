@@ -37,6 +37,7 @@
   background: transparent;
   border: none;
   vertical-align: middle;
+  width: 80px;
 }
 .upDownArrowDiv{
   display: inline-block;
@@ -99,8 +100,8 @@ input[type="text"]
 }
 img.small {
   display: block;
-  max-width:200px;
-  max-height:200px;
+  max-width:100%;
+  max-height:100%;
   width: auto;
   height: auto;
   margin: auto;

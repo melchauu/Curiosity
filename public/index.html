@@ -39,24 +39,24 @@
     <div class="row" ng-controller="MainController">
       <div class="col-md-3">
         <div class="bordered-box">
-          <img class="small" src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg"/>
+          <img class="small" src="img/Mars.gif"/>
         </div>
       </div>
       <div class="col-md-3">
         <div class="bordered-box">
-          <img class="small" src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg"/>
+          <img class="small" src="img/curiosity_rover.png"/>
         </div>
 		<!-- Date time -->
 		<div class="dateDiv">
 		  <input  class="arrow" type="image" src="img/left-arrow-32.png" alt="Submit" width="32" height="32"
               ng-click="solDecr()" ng-init="sol=1">
 		  <!--<label class="dateText">Sol 100</label>-->
-		  <input class="dateText" type="text" size="7" value="Sol {{sol}}">
-		  <input class="arrow" type="image" src="img/right-arrow-32.png" alt="Submit" width="32" height="32" ng-click="sol = sol + 1">
+		  <input class="dateText" type="text" size="7" ng-change="solDisplayChanged()"ng-model="solDisplay"  ng-model-options="{ debounce: 1000 }">
+		  <input class="arrow" type="image" src="img/right-arrow-32.png" alt="Submit" width="32" height="32" ng-click="solIncr()">
         </div>
 		<div class="dateDiv">
 		  <!--<label class="dateText">Sol 100</label>-->
-		  <input class="timeText" type="text" size="2" value="01:00">
+		  <input class="timeText" type="text" value="01:00">
 		  <div class="upDownArrowDiv">
 			  <input class="arrow" type="image" src="img/up-arrow-24-grass.png" alt="Submit" width="24" height="24">
 			  <input class="arrow" type="image" src="img/down-arrow-24-grass.png" alt="Submit" width="24" height="24">
